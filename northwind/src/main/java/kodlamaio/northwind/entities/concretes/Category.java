@@ -19,17 +19,17 @@ import lombok.NoArgsConstructor;
 @Table(name="categories")
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties({"hibernatLazyInitializer","hendler","products"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","products"})
+
 // sonsuz liste gelmesini engellemek için @JsonIgnoreProperties yapıyoruz.
 public class Category {
 	
 	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="category_id")
-	private int catogeryId;
+	private int categoryId;
 	
 	@Column(name="category_name")
-	private String catecoryName; 
+	private String categoryName;
 	
 	@OneToMany(mappedBy = "category")
 	private List<Product> products;
